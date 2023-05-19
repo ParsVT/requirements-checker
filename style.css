@@ -37,6 +37,12 @@ body h1 {
 	min-width: 240px;
 }
 
+@media (max-width: 400px) {
+	.tabs {
+		width: 70%;
+	}
+}
+
 .tabs input[name="tab-control"] {
 	display: none;
 }
@@ -318,23 +324,6 @@ body h1 {
 	}
 }
 
-.check {
-	fill: green;
-}
-
-.xmark {
-	fill: red;
-}
-
-a {
-	text-decoration: none;
-	color: #428bff;
-}
-
-a:hover {
-	color: #0a69ff;
-}
-
 .align {
 	display: grid;
 	place-items: center;
@@ -438,25 +427,6 @@ input[type="submit"] {
 	background-color: #267aff;
 }
 
-@media (max-width: 570px) {
-	table {
-		table-layout: fixed !important;
-		width: 125% !important;
-		word-wrap: break-word;
-		vertical-align: bottom;
-	}
-	
-	thead th {
-		vertical-align: top;
-	}
-}
-
-@media (max-width: 400px) {
-	.tabs {
-		width: 70%;
-	}
-}
-
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -481,16 +451,41 @@ td {
 	font-size: 14px;
 }
 
+td svg {
+	width: 18px;
+	vertical-align: top;
+}
+
 thead th {
 	background-color: #428bff;
 	color: #eee;
+}
+
+tbody tr {
+	transition: background-color 0.2s;
 }
 
 tbody tr:hover {
 	background-color: #b3d0ff;
 }
 
-td svg {
-	width: 18px;
-	vertical-align: top;
+@media (max-width: 570px) {
+	table {
+		table-layout: fixed !important;
+		width: 125% !important;
+		word-wrap: break-word;
+		vertical-align: bottom;
+	}
+
+	thead th {
+		vertical-align: top;
+	}
+}
+
+.check {
+	fill: green;
+}
+
+.xmark {
+	fill: red;
 }
