@@ -145,6 +145,7 @@ body h1 {
 .tabs .content section h2 {
 	color: #428bff;
 	display: none;
+	width: 100%;
 }
 
 .tabs .content section h2::after {
@@ -156,6 +157,14 @@ body h1 {
 	background: #428bff;
 	margin-top: 5px;
 	left: 1px;
+}
+
+.tabs .content section h3 {
+	color: #428bff;
+	font-family: "Montserrat";
+	font-size: 16px;
+	padding-bottom: 20px;
+	width: 100%;
 }
 
 .tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label {
@@ -488,4 +497,68 @@ tbody tr:hover {
 
 .xmark {
 	fill: red;
+}
+
+a {
+	text-decoration: none;
+}
+
+.sticky_sidebar a {
+	padding: 0 10px;
+	color: #428bff;
+}
+
+.sticky_sidebar a svg {
+	width: 22px;
+	fill: #eee;
+}
+
+ul.sticky_sidebar {
+	position: fixed;
+	top: 45%;
+	z-index: 9999;
+	background: #428bff;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+ul.sticky_sidebar li {
+	padding: 10px 5px;
+}
+
+tr.blink_me.danger {
+	background-color: #ff0000;
+}
+
+tr.blink_me.warning {
+	background-color: #ffdd00;
+}
+
+tr.blink_me.danger:hover {
+	background-color: #b00000;
+}
+
+tr.blink_me.warning:hover {
+	background-color: #b09800;
+}
+
+.app-footer {
+	font-family: monospace;
+	font-size: 11px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+.app-footer p {
+	width: 100%;
+	text-align: center;
+	background: #fbfbfb;
+	margin-bottom: 0;
+	padding: 4px 0;
+	border-top: 1px solid #ddd;
 }
