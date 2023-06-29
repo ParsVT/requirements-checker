@@ -738,7 +738,7 @@ class ParsVT_Check_Requirements
         $dir = str_replace("\\", "/", $root_directory);
         $params = ["Local directory" => $root_directory];
         if (self::$disaplayCapacity) {
-            $params["Capacity"] = "Free" . ": " . (!function_exists("disk_free_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_free_space($dir))) . ", " . "Used" . ": " . (!function_exists("disk_total_space") || !function_exists("disk_free_space") || self::exec_disabled("disk_total_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_total_space($dir) - disk_free_space($dir))) . ", " . "Total" . ": " . (!function_exists("disk_total_space") || !function_exists("disk_free_space") || self::exec_disabled("disk_total_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_total_space($dir)));
+            $params["Capacity"] = "Total" . ": " . (!function_exists("disk_total_space") || !function_exists("disk_free_space") || self::exec_disabled("disk_total_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_total_space($dir))) . ", " . "Used" . ": " . (!function_exists("disk_total_space") || !function_exists("disk_free_space") || self::exec_disabled("disk_total_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_total_space($dir) - disk_free_space($dir))) . ", " . "Free" . ": " . (!function_exists("disk_free_space") || self::exec_disabled("disk_free_space") ? "Unknown" : self::showBytes(disk_free_space($dir)));
         }
         $params["Operating system"] = function_exists("php_uname") ? php_uname() : "Unknown";
         if (isset($ini["SAPI"])) {
