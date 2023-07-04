@@ -529,9 +529,9 @@ class ParsVT_Check_Requirements
         $result = mysqli_query($con, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                $default_collation_name = $row["DEFAULT_COLLATION_NAME"];
+                $default_collation_name = $row["default_collation_name"];
+                $default_character_set_name = $row["default_character_set_name"];
             }
-            $default_character_set_name = $row["DEFAULT_CHARACTER_SET_NAME"];
         } else {
             return [true, "Unknown"];
         }
