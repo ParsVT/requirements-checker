@@ -9,7 +9,7 @@ Database Information, PHP Extensions, PHP Configuration, Security Configuration,
 
 ## How to use
 1. Place the `check.php` file in the root of your server/host.
-2. Explore the file location in your browser (`https://example.com/check.php`).
+2. Explore the file location in your browser (`http://example.com/check.php`).
 
 ## Contribution
 - [Discord](https://discord.gg/2JjvhAk)
