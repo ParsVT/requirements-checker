@@ -98,7 +98,7 @@ class ParsVT_Check_Requirements
             "name" => "soap",
             "mandatory" => true,
         ],
-        "FileInfo" => [
+        "Fileinfo" => [
             "type" => "e",
             "name" => "fileinfo",
             "mandatory" => true,
@@ -152,7 +152,7 @@ class ParsVT_Check_Requirements
                 "fn" => "validateIonCubeInstalledVersion",
             ],
             "error_reporting" => [
-                "recommended" => "E_ALL & ~E_WARNING  & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT",
+                "recommended" => "E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT",
                 "help" => "LBL_ERROR_REPORTING_HELP_TEXT",
                 "fn" => "validateErrorReporting",
             ],
