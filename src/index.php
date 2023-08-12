@@ -330,7 +330,7 @@ echo "</tr>";
 </div>
 </div>
 <footer class='app-footer'>
-<p><span>Version</span> - 1.0.0 &nbsp;|&nbsp; <span>Patch</span> - 14020412 &nbsp;|&nbsp; <span>© 2023 <a href="https://parsvt.com" target="_blank">ParsVT Group</a>.</span></p>
+<p><span>Version</span> - 1.0.0 &nbsp;|&nbsp; <span>Patch</span> - 14020518 &nbsp;|&nbsp; <span>© 2023 <a href="https://parsvt.com" target="_blank">ParsVT Group</a>.</span></p>
 </footer>
 <ul class="sticky_sidebar">
 <li>

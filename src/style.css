@@ -441,7 +441,8 @@ table {
 	border-collapse: collapse;
 	overflow: hidden;
 	border-radius: 5px;
-	table-layout: auto;
+	table-layout: fixed;
+	word-wrap: break-word;
 }
 
 th,
@@ -480,9 +481,7 @@ tbody tr:hover {
 
 @media (max-width: 570px) {
 	table {
-		table-layout: fixed !important;
 		width: 125% !important;
-		word-wrap: break-word;
 		vertical-align: bottom;
 	}
 
