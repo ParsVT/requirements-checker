@@ -2,8 +2,8 @@
 /******************************************
  * Program: ParsVT CRM Requirements Checker
  * Developer: Hamid Rabiei, Mohammad Hadadpour
- * Date: 1402-03-05
- * Last Update: 1402-05-18
+ * Release: 1402-03-05
+ * Update: 1402-05-18
  ******************************************/
 ini_set("display_errors", "off");
 error_reporting(0);
