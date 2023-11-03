@@ -3,7 +3,7 @@
 class ParsVT_Check_Requirements
 {
     public static $disaplayCapacity = true;
-    public static $latest_ioncube = "12.0.5";
+    public static $latest_ioncube = "13.0.2";
     private static $tmpPath;
     public static $yes = '<svg viewBox="0 0 448 512" class="check"><use xlink:href="#icon-check"></use></svg>';
     public static $no = '<svg viewBox="0 0 384 512" class="xmark"><use xlink:href="#icon-xmark"></use></svg>';
@@ -142,7 +142,7 @@ class ParsVT_Check_Requirements
                 "max" => "7.2",
             ],
             "ionCube" => [
-                "recommended" => "12.x",
+                "recommended" => "13.x.x",
                 "help" => "LBL_IONCUBE_HELP_TEXT",
                 "fn" => "validateIonCube",
             ],
@@ -336,7 +336,7 @@ class ParsVT_Check_Requirements
                 "recommended" => "On",
                 "help" => "LBL_DISPLAY_ERRORS_HELP_TEXT",
                 "current" => static::getFlag(ini_get("display_errors")),
-                "status" => ini_get("display_errors") == 1 || stripos(ini_get("display_errors"), "On") === false,
+                "status" => ini_get("display_errors") != 1 || stripos(ini_get("display_errors"), "Off") !== false,
             ],
             "HTTPS" => [
                 "recommended" => "On",
@@ -346,31 +346,31 @@ class ParsVT_Check_Requirements
                 "recommended" => "On",
                 "help" => "LBL_SESSION_USE_STRICT_MODE_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_strict_mode")),
-                "status" => ini_get("session.use_strict_mode") != 1 && stripos(ini_get("session.use_strict_mode"), "Off") !== false,
+                "status" => ini_get("session.use_strict_mode") != 1 || stripos(ini_get("session.use_strict_mode"), "Off") !== false,
             ],
             "session.use_trans_sid" => [
                 "recommended" => "Off",
                 "help" => "LBL_SESSION_USE_TRANS_SID_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_trans_sid")),
-                "status" => ini_get("session.use_trans_sid") == 1 || stripos(ini_get("session.use_trans_sid"), "On") !== false,
+                "status" => ini_get("session.use_trans_sid") == 1 || stripos(ini_get("session.use_trans_sid"), "Off") !== false,
             ],
             "session.cookie_httponly" => [
                 "recommended" => "On",
                 "help" => "LBL_SESSION_COOKIE_HTTPONLY_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.cookie_httponly")),
-                "status" => ini_get("session.cookie_httponly") != 1 && stripos(ini_get("session.cookie_httponly"), "Off") !== false,
+                "status" => ini_get("session.cookie_httponly") != 1 || stripos(ini_get("session.cookie_httponly"), "Off") !== false,
             ],
             "session.use_only_cookies" => [
                 "recommended" => "On",
                 "help" => "LBL_SESSION_USE_ONLY_COOKIES_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_only_cookies")),
-                "status" => ini_get("session.use_only_cookies") != 1 && stripos(ini_get("session.use_only_cookies"), "Off") !== false,
+                "status" => ini_get("session.use_only_cookies") != 1 || stripos(ini_get("session.use_only_cookies"), "Off") !== false,
             ],
             "expose_php" => [
                 "recommended" => "Off",
                 "help" => "LBL_EXPOSE_PHP_HELP_TEXT",
                 "current" => static::getFlag(ini_get("expose_php")),
-                "status" => ini_get("expose_php") == 1 || stripos(ini_get("expose_php"), "On") !== false,
+                "status" => ini_get("expose_php") == 1 || stripos(ini_get("expose_php"), "Off") !== false,
             ],
             "Header: X-Frame-Options" => [
                 "recommended" => "SAMEORIGIN",
@@ -535,7 +535,7 @@ class ParsVT_Check_Requirements
         } else {
             return [true, "Unknown"];
         }
-        if ($default_character_set_name == "utf8" && ($default_collation_name == "utf8_persian_ci" || $default_collation_name == "utf8_general_ci" || $default_collation_name == "utf8_unicode_ci")) {
+        if (in_array($default_character_set_name, array('utf8', 'utf8mb3', 'utf8mb4')) && in_array($default_collation_name, array('utf8_persian_ci', 'utf8_general_ci', 'utf8_unicode_ci', 'utf8mb3_persian_ci', 'utf8mb3_general_ci', 'utf8mb3_unicode_ci', 'utf8mb4_persian_ci', 'utf8mb4_general_ci', 'utf8mb4_unicode_ci'))) {
             return [false, $default_collation_name];
         } elseif ($default_character_set_name == "utf8") {
             return [false, $default_collation_name];
@@ -575,7 +575,7 @@ class ParsVT_Check_Requirements
                 "current" => $con->stat,
             ],
             "Database collation" => [
-                "recommended" => "utf8_general_ci",
+                "recommended" => "utf8mb4_general_ci",
                 "current" => $dbstatus[1],
                 "status" => $dbstatus[0],
             ],
@@ -608,7 +608,7 @@ class ParsVT_Check_Requirements
                 "help" => "LBL_LOG_BIN_TRUST_FUNCTION_CREATORS_HELP_TEXT",
             ],
             "max_allowed_packet" => [
-                "recommended" => "10 MB",
+                "recommended" => "16 MB",
                 "help" => "LBL_MAX_ALLOWED_PACKET_HELP_TEXT",
             ],
             "log_error" => [

@@ -1,5 +1,5 @@
 <?php
-ini_set("display_errors", "on");
+ini_set("display_errors", "On");
 error_reporting(1); //STRICT DEVELOPMENT
 session_start();
 if (isset($_REQUEST["action"]) && $_REQUEST["action"] == "reset") {
@@ -330,7 +330,7 @@ echo "</tr>";
 </div>
 </div>
 <footer class='app-footer'>
-<p><span>Version</span> - 1.0.0 &nbsp;|&nbsp; <span>Patch</span> - 14020518 &nbsp;|&nbsp; <span>© 2023 <a href="https://parsvt.com" target="_blank">ParsVT Group</a>.</span></p>
+<p><span>Version</span> - 1.0.1 &nbsp;|&nbsp; <span>Patch</span> - 14020722 &nbsp;|&nbsp; <span>© 2023 <a href="https://parsvt.com" target="_blank">ParsVT Group</a>.</span></p>
 </footer>
 <ul class="sticky_sidebar">
 <li>
