@@ -336,7 +336,7 @@ class ParsVT_Check_Requirements
                 "recommended" => "On",
                 "help" => "LBL_DISPLAY_ERRORS_HELP_TEXT",
                 "current" => static::getFlag(ini_get("display_errors")),
-                "status" => ini_get("display_errors") != 1 || stripos(ini_get("display_errors"), "Off") !== false,
+                "status" => (ini_get("display_errors") != 1 || stripos(ini_get("display_errors"), "Off") !== false),
             ],
             "HTTPS" => [
                 "recommended" => "On",
@@ -346,31 +346,31 @@ class ParsVT_Check_Requirements
                 "recommended" => "On",
                 "help" => "LBL_SESSION_USE_STRICT_MODE_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_strict_mode")),
-                "status" => ini_get("session.use_strict_mode") != 1 || stripos(ini_get("session.use_strict_mode"), "Off") !== false,
+                "status" => (ini_get("session.use_strict_mode") != 1 || stripos(ini_get("session.use_strict_mode"), "Off") !== false),
             ],
             "session.use_trans_sid" => [
                 "recommended" => "Off",
                 "help" => "LBL_SESSION_USE_TRANS_SID_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_trans_sid")),
-                "status" => ini_get("session.use_trans_sid") == 1 || stripos(ini_get("session.use_trans_sid"), "Off") !== false,
+                "status" => (ini_get("session.use_trans_sid") == 1 || stripos(ini_get("session.use_trans_sid"), "On") !== false),
             ],
             "session.cookie_httponly" => [
                 "recommended" => "On",
                 "help" => "LBL_SESSION_COOKIE_HTTPONLY_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.cookie_httponly")),
-                "status" => ini_get("session.cookie_httponly") != 1 || stripos(ini_get("session.cookie_httponly"), "Off") !== false,
+                "status" => (ini_get("session.cookie_httponly") != 1 || stripos(ini_get("session.cookie_httponly"), "Off") !== false),
             ],
             "session.use_only_cookies" => [
                 "recommended" => "On",
                 "help" => "LBL_SESSION_USE_ONLY_COOKIES_HELP_TEXT",
                 "current" => static::getFlag(ini_get("session.use_only_cookies")),
-                "status" => ini_get("session.use_only_cookies") != 1 || stripos(ini_get("session.use_only_cookies"), "Off") !== false,
+                "status" => (ini_get("session.use_only_cookies") != 1 || stripos(ini_get("session.use_only_cookies"), "Off") !== false),
             ],
             "expose_php" => [
                 "recommended" => "Off",
                 "help" => "LBL_EXPOSE_PHP_HELP_TEXT",
                 "current" => static::getFlag(ini_get("expose_php")),
-                "status" => ini_get("expose_php") == 1 || stripos(ini_get("expose_php"), "Off") !== false,
+                "status" => (ini_get("expose_php") == 1 || stripos(ini_get("expose_php"), "On") !== false),
             ],
             "Header: X-Frame-Options" => [
                 "recommended" => "SAMEORIGIN",
@@ -535,9 +535,9 @@ class ParsVT_Check_Requirements
         } else {
             return [true, "Unknown"];
         }
-        if (in_array($default_character_set_name, array('utf8', 'utf8mb3', 'utf8mb4')) && in_array($default_collation_name, array('utf8_persian_ci', 'utf8_general_ci', 'utf8_unicode_ci', 'utf8mb3_persian_ci', 'utf8mb3_general_ci', 'utf8mb3_unicode_ci', 'utf8mb4_persian_ci', 'utf8mb4_general_ci', 'utf8mb4_unicode_ci'))) {
+        if (in_array($default_character_set_name, array('utf8', 'utf8mb3', 'utf8mb4')) && in_array($default_collation_name, array('utf8_general_ci', 'utf8_unicode_ci', 'utf8_persian_ci', 'utf8mb3_general_ci', 'utf8mb3_unicode_ci', 'utf8mb3_persian_ci', 'utf8mb4_general_ci', 'utf8mb4_unicode_ci', 'utf8mb4_persian_ci'))) {
             return [false, $default_collation_name];
-        } elseif ($default_character_set_name == "utf8") {
+        } elseif ($default_character_set_name == "utf8mb4") {
             return [false, $default_collation_name];
         } else {
             return [true, $default_collation_name];
