@@ -1,5 +1,5 @@
 # ParsVtiger Requirements Checker
-Get Ready for ParsVtiger.
+Get Ready for ParsVtiger!
 
 Database Information, PHP Extensions, PHP Configuration, Security Configuration, and Other Information checker for ParsVtiger requirements.
 
