@@ -197,12 +197,12 @@ class ParsVT_Check_Requirements
                 "fn" => "validateOnOff",
             ],
             "post_max_size" => [
-                "recommended" => "50 MB",
+                "recommended" => "128 MB",
                 "help" => "LBL_POST_MAX_SIZE_HELP_TEXT",
                 "fn" => "validateGreaterMb",
             ],
             "upload_max_filesize" => [
-                "recommended" => "100 MB",
+                "recommended" => "128 MB",
                 "help" => "LBL_UPLOAD_MAX_FILESIZE_HELP_TEXT",
                 "fn" => "validateGreaterMb",
             ],
@@ -227,7 +227,7 @@ class ParsVT_Check_Requirements
                 "fn" => "validateGreater",
             ],
             "session.gc_divisor" => [
-                "recommended" => "500",
+                "recommended" => "1000",
                 "help" => "LBL_SESSION_GC_DIVISOR_HELP_TEXT",
                 "fn" => "validateGreater",
             ],
