@@ -1,7 +1,7 @@
 # ParsVT Requirements Checker
 ParsVT CRM requirements checker.
 
-Database Information, PHP Extensions, PHP Configuration, Security Configuration, and Other Information checker for ParsVtiger requirements.
+Database information, PHP extensions, PHP configuration, security configuration and other information checker for ParsVtiger requirements.
 
 > Developers: Hamid Rabiei, Mohammad Hadadpour
 
