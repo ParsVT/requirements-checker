@@ -1,5 +1,5 @@
 # ParsVT Requirements Checker
-Get Ready for ParsVtiger!
+ParsVT CRM requirements checker.
 
 Database Information, PHP Extensions, PHP Configuration, Security Configuration, and Other Information checker for ParsVtiger requirements.
 
